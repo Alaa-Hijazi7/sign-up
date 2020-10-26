@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+.submit{
+    background-color: #1565D8;
+    color: white;
+    font-size: 13px;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    margin-top: 2em;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+.submit:active {
+    background-color: #0547a3;
+}
+.lines{
+    display: flex;
+    width: 132px;
+    flex-direction: row;
+    margin-left: 20em;
+}
+
+.or-text{
+    margin-left: 14em;
+    font-family: "Inter", sans-serif;
+    color: #BABABA;
+    font-size: 12px;
+    margin-top: 1em;
+}
+.asda{
+    display:flex;
+    flex-direction: row;
+}
+.first-line{
+    margin-left: -19em;
+    margin-right: -8em;
+    margin-top: 9px;
+    margin-top: 1.2em;
+}
+.second-line{
+    margin-left: -17em;
+    margin-top: 10px;
+    margin-right: 1em;
+    margin-top: 1.2em;
+}
+.googleSs{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+.googleS{
+    display:flex;
+    justify-content: center;
+    background-color: #1565D8;
+    color: rgb(0, 0, 0);
+    font-size: 13px;
+    margin-top: 2em;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
+    border-radius: 6px;
+    padding: 20px;
+    padding-top: 15px;
+    margin-left: -30em;
+    width: 30em;
+    margin-top: 3em;
+    padding-bottom: 10px;
+    line-height: 27px;
+    
+}

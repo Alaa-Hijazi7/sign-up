@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.blue{
+    display: flex;
+    flex-direction: column;
+    width: 542px;
+    height: 721px;
+       background: 
+    linear-gradient(
+      rgba(0, 89, 255, 0.719), 
+      rgba(0, 60, 255, 0.74)
+    ),
+    url(../../../asset/img/background.png);
+    position: absolute;
+    opacity: 0.9;
+    background-repeat: no-repeat;
+    background-size: 542px 721px;
+    position: relative;
+    
+}
+.com-logo{
+    margin-top: 1em;
+    margin-left: 3em;
+}
+.quote{
+    margin-top: 9em;
+    margin-left: 3em;
+}
+.quote-text{
+    line-height: 30px;
+    margin-top: .002em;
+    width: 345px;
+    height: 90px;
+    font-size: 15px;
+    font-family: "Inter", sans-serif;
+    margin-left: 0.2em;
+    color: #ffffff;
+}
+.quotes-name{
+    font-family: 'Inter', sans-serif;
+    color: white;
+    margin-top: 3em;
+}
+.points{
+    margin-left: 15em;
+    margin-top: -22em;
+    width: 10px;
+}
+.end-quote{
+    width: 25px;
+    margin-left: 19em;
+    margin-top: 2em;
+}
