@@ -12,13 +12,13 @@
     margin-left: 13em;
 }
 label{
-    font-size: 12px;
+    font-size: 14px;
     color: #696F79;
     margin-bottom: 1em;
     margin-top: 1em;
 }
 input{
-    font-size: 10px;
+    font-size: 15px;
     border: 1px solid #8692A6;
     box-sizing: border-box;
     border-radius: 6px;
@@ -35,4 +35,10 @@ input::placeholder{
 .agree-checkbox{
     margin-left: -.01em;
     margin-top: 2em;
+}
+.cb1{
+    display: flex; 
+}
+.cb1 label{
+    margin: 20px;
 }

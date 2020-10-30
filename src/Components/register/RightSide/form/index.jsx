@@ -9,29 +9,34 @@ const initialState = {
   passwordErrorMsg: "",
   re_password: "",
   re_passwordErrorMsg: "",
+  isChecked: false,
 };
 
 class Form extends React.Component {
   state = initialState;
 
   handleChange = (e) => {
-    const { value, name } = e.target;
-    this.setState({ [name]: value });
+    const { value, name, type, checked } = e.target;
+    let _value = value;
+    _value = type === "checkbox" ? checked : value;
+    this.setState({ [name]: _value });
   };
 
   submit = (e) => {
     e.preventDefault();
-
-    alert(
-      `email : ${this.state.email} password: ${this.state.password} re_password: ${this.state.re_password}`
-    );
-
-    //clear
-    // this.setState(initialState);
+    if (this.state.isChecked === true) {
+      alert(
+        `email : ${this.state.email} password: ${this.state.password} re_password: ${this.state.re_password}`
+      );
+      //clear
+      this.setState(initialState);
+    } else {
+      alert("You must agree terms & conditions");
+    }
   };
 
   render() {
-    const { email, password, re_password } = this.state;
+    const { email, password, re_password, isChecked } = this.state;
     return (
       <>
         <div className="all-form">
@@ -64,12 +69,24 @@ class Form extends React.Component {
               value={re_password}
               onChange={this.handleChange}
             />
-
-            <div className="agree">
-              <input type="checkbox" className="agree-checkbox" />
-              <label className="i-agree">I agree to terms & conditions</label>
+            <div className="cb1">
+              <input
+                type="checkbox"
+                id="checkbox"
+                name="isChecked"
+                className="agree-checkbox"
+                checked={isChecked}
+                onChange={this.handleChange}
+              />
+              <label htmlfor="checkbox">I agree to terms & conditions</label>
             </div>
-            <Register />
+            <Register
+              type="submit"
+              name="submit"
+              id="submit"
+              className="submit"
+              Button
+            />
           </form>
         </div>
       </>

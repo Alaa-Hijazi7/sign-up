@@ -16,7 +16,6 @@
       rgba(0, 60, 255, 0.74)
     ),
     url(../../../asset/img/background.png);
-    position: absolute;
     opacity: 0.9;
     background-repeat: no-repeat;
     background-size: 542px 721px;

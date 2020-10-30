@@ -15,7 +15,7 @@ class LeftSide extends React.Component {
             <Logo />
           </div>
           <div className="quote">
-            <Quote />
+            <Quote color="#00DAF7" />
             <div className="quote-text">
               I always observe the people who pass by when I ride an escalator.
               I'll never see most of them again, so I imagine a lot of things

@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.login-right{
+    display: flex;
+    flex-direction: column;
+    margin-left: 25em;
+    margin-top: 8em;
+}
+.login-right h1{
+margin-left: 1em;
+line-height: 2em;
+}
+.login-right p {
+    color: #8692A6;
+}
+.social-media{
+    margin-top: 1em;
+}
+.asdawd{
+    display: flex;
+    margin-left: -3em;
+    margin-top: 1em;
+}
+.login-input{
+    font-size: 15px;
+}

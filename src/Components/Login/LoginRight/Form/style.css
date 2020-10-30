@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.login-form{
+    display: flex;
+    flex-direction: column;
+}
+.remember-me{
+    display: flex;
+    margin-top: 15px;
+    margin-bottom: 7px;
+}
+.remember-me label{
+    margin-top:0;
+    margin-left: 5px;
+}
+.login-Btn{
+    background-color: #1565D8;
+    color: white;
+    font-size: 17px;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+.account-go-register{
+    font-size: 13px;
+    margin: 10px;
+    margin-left: 45px;
+    margin-top: 15px;
+}
+.password-div{
+    display: flex;
+    flex-direction: column;
+}
+.Eye{
+    position: absolute;
+    background-image: url(../../../../asset/img/eye.svg);
+    top: 31.33em;
+    right: 23em;
+    cursor: pointer;
+    background-repeat: no-repeat;
+}

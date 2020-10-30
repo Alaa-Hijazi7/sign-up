@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+.login-left{
+    display: flex;
+    flex-direction: column;
+    position:relative;
+}
+.logo{
+    margin: 2em;
+    margin-top: 1em;
+    margin-left: 3em;
+}
+.login-quote{
+    display :flex;
+    flex-direction: column;
+    margin-left: 4em;
+    margin-top:5em;
+}
+.login-quote-text{
+    margin-right: 70%;
+    color: #696F79;
+    Line-Height:34px;
+    font-style: italic;
+    margin-bottom: 3em;
+    width: 23em;
+}
+.login-quotes-name{
+    color: #696F79;
+    margin-top: 2em;   
+}
+.joystick{
+    margin-left:20em;
+    width: 19em;
+    position:absolute;
+    top: 20em;
+    left: 0em;
+}
