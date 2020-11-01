@@ -78,7 +78,7 @@ class Form extends React.Component {
                 checked={isChecked}
                 onChange={this.handleChange}
               />
-              <label htmlfor="checkbox">I agree to terms & conditions</label>
+              <label htmlFor="checkbox">I agree to terms & conditions</label>
             </div>
             <Register
               type="submit"

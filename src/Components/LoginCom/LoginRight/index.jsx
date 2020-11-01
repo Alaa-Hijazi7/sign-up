@@ -1,6 +1,5 @@
 import React from "react";
 
-import "./style.css";
 import Google from "../../../asset/img/google.svg";
 import Twitter from "../../../asset/img/twitter.svg";
 import Linkedin from "../../../asset/img/linkedin.svg";
@@ -8,6 +7,9 @@ import Github from "../../../asset/img/Github.svg";
 import BtnSocial from "./BtnSocial";
 import Line from "../../../asset/img/line";
 import LoginForm from "./Form";
+
+import "./style.css";
+import "./../../RegisterCom/RightSide/form/ConfirmBtns/Register/style.css";
 
 const LoginRight = () => {
   return (

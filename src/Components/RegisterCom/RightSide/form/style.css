@@ -33,7 +33,7 @@ input::placeholder{
 }
 .agree-checkbox{
     margin-left: -.01em;
-    margin-top: 2em;
+    margin-top: 1.5em;
 }
 .cb1{
     display: flex; 

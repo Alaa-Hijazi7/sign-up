@@ -1,8 +1,7 @@
 import React from "react";
 
-// import Form from "../Login/Form";
-import LoginLeft from "../Login/LoginLeft";
-import LoginRight from "../Login/LoginRight";
+import LoginLeft from "../../Components/LoginCom/LoginLeft";
+import LoginRight from "../../Components/LoginCom/LoginRight";
 import "./style.css";
 class Login extends React.Component {
   render() {

@@ -5,6 +5,7 @@ import Label from "../../../../Components/Input/Label";
 import Eye from "../../../../asset/img/eye.svg";
 
 import "./style.css";
+import "../../../RegisterCom/RightSide/form/style.css";
 
 const initialState = {
   email: "",
@@ -80,7 +81,7 @@ class LoginForm extends React.Component {
               checked={RememberMe}
               onChange={this.handleChange}
             />
-            <Label htmlfor="checkbox">Remember me</Label>
+            <Label htmlFor="checkbox">Remember me</Label>
           </div>
 
           <Button className="login-Btn">Login</Button>

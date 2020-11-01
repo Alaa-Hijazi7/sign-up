@@ -1,16 +1,17 @@
 import React from "react";
 
 const Input = (props) => {
+  const { type, name, id, placeholder, value, onChange, className } = props;
   return (
     <>
       <input
-        type={props.type}
-        name={props.name}
-        id={props.id}
-        placeholder={props.placeholder}
-        value={props.value}
-        onChange={props.onChange}
-        className={props.className}
+        type={type}
+        name={name}
+        id={id}
+        placeholder={placeholder}
+        value={value}
+        onChange={onChange}
+        className={className}
       />
     </>
   );
