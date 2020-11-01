@@ -1,6 +1,6 @@
 import React from "react";
 
-import LoginLogo from "../../logo/LoginLogo";
+import LoginLogo from "../../../Components/Logo/LoginLogo";
 import Quote from "../../../asset/img/Quote.jsx";
 import "./style.css";
 import joystick from "./joystick.png";

@@ -23,7 +23,7 @@ const LoginRight = () => {
             <img src={Twitter} alt="Twitter" />
           </BtnSocial>
           <BtnSocial href="https://Linkedin.com" className="LinkedIn-btn">
-            <img src={Linkedin} alt="Linkedn" />
+            <img src={Linkedin} alt="LinkedIn" />
           </BtnSocial>
           <BtnSocial href="https://Github.com" className="Github-btn">
             <img src={Github} alt="Github" />
@@ -33,7 +33,7 @@ const LoginRight = () => {
           <div className="first-line">
             <Line id="line1" />
           </div>
-          <p className="or-text">Or</p>
+          <p className="or-text or-text-login">Or</p>
           <div className="second-line">
             <Line id="line1" />
           </div>

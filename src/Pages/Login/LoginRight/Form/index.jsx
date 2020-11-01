@@ -1,7 +1,7 @@
 import React from "react";
-import Button from "../../../Btns";
-import Input from "../../../Input/Input";
-import Label from "../../../Input/Label";
+import Button from "../../../../Components/Btns";
+import Input from "../../../../Components/Input/Input";
+import Label from "../../../../Components/Input/Label";
 import Eye from "../../../../asset/img/eye.svg";
 
 import "./style.css";
@@ -56,7 +56,7 @@ class LoginForm extends React.Component {
               Password
             </Label>
             <Input
-              type={`${showPassword ? "text" : "password"}`}
+              type={showPassword ? "text" : "password"}
               id="password"
               name="password"
               placeholder="Enter your password"
@@ -72,10 +72,11 @@ class LoginForm extends React.Component {
           </div>
           <div className="remember-me">
             <Input
+              put
               type="checkbox"
               id="checkbox"
               name="RememberMe"
-              className="remember-checkbox "
+              className="remember-checkbox"
               checked={RememberMe}
               onChange={this.handleChange}
             />

@@ -2,7 +2,7 @@ import React from "react";
 
 import "./style.css";
 
-function login_logo(props) {
+function LoginLogo(props) {
   return (
     <svg
       width={props.width}
@@ -30,4 +30,4 @@ function login_logo(props) {
     </svg>
   );
 }
-export default login_logo;
+export default LoginLogo;

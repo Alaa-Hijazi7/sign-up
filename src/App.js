@@ -1,16 +1,16 @@
 import React from "react";
 import "./App.css";
-import Login from "./Components/Login/Login";
-import LeftSide from "./Components/register/LeftSide/index";
-import RightSide from "./Components/register/RightSide";
+import Login from "./Pages/Login/Login";
+import LeftSide from "./Pages/Register/LeftSide";
+import RightSide from "./Pages/Register/RightSide";
 
 function App() {
   return (
     <>
       <div className="App">
-        {/* <LeftSide />
-        <RightSide /> */}
-        <Login />
+        <LeftSide />
+        <RightSide />
+        {/* <Login /> */}
       </div>
     </>
   );

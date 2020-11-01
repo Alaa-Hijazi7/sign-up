@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./style.css";
-import Logo from "../../logo/index.jsx";
+import Logo from "../../../Components/Logo";
 import Points from "../../../asset/img/points.jsx";
 import Quote from "../../../asset/img/Quote.jsx";
 import Endquote from "../../../asset/img/Endquote.jsx";

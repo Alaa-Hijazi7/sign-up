@@ -4,7 +4,7 @@ import Line from "../../../../../../asset/img/line";
 import GoogleLogo from "../../../../../../asset/img/GoogleLogo";
 
 import "./style.css";
-import Button from "../../../../../Btns";
+import Button from "../../../../../../Components/Btns";
 
 class Register extends React.Component {
   render() {
