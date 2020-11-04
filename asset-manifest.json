@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/sign-up/static/css/main.ada92071.chunk.css",
+    "main.js": "/sign-up/static/js/main.a260bba9.chunk.js",
+    "main.js.map": "/sign-up/static/js/main.a260bba9.chunk.js.map",
+    "runtime-main.js": "/sign-up/static/js/runtime-main.28a3230e.js",
+    "runtime-main.js.map": "/sign-up/static/js/runtime-main.28a3230e.js.map",
+    "static/js/2.209ff0c5.chunk.js": "/sign-up/static/js/2.209ff0c5.chunk.js",
+    "static/js/2.209ff0c5.chunk.js.map": "/sign-up/static/js/2.209ff0c5.chunk.js.map",
+    "index.html": "/sign-up/index.html",
+    "static/css/main.ada92071.chunk.css.map": "/sign-up/static/css/main.ada92071.chunk.css.map",
+    "static/js/2.209ff0c5.chunk.js.LICENSE.txt": "/sign-up/static/js/2.209ff0c5.chunk.js.LICENSE.txt",
+    "static/media/Github.ff16a045.svg": "/sign-up/static/media/Github.ff16a045.svg",
+    "static/media/style.css": "/sign-up/static/media/eye.3bdd03e0.svg",
+    "static/media/google.c6385b99.svg": "/sign-up/static/media/google.c6385b99.svg",
+    "static/media/joystick.899607da.png": "/sign-up/static/media/joystick.899607da.png",
+    "static/media/linkedin.f01b4276.svg": "/sign-up/static/media/linkedin.f01b4276.svg",
+    "static/media/twitter.6142e8ac.svg": "/sign-up/static/media/twitter.6142e8ac.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.28a3230e.js",
+    "static/js/2.209ff0c5.chunk.js",
+    "static/css/main.ada92071.chunk.css",
+    "static/js/main.a260bba9.chunk.js"
+  ]
+}
