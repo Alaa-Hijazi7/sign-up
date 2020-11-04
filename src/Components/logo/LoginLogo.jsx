@@ -1,12 +1,11 @@
-import React from "react";
-
 import "./style.css";
 
 function LoginLogo(props) {
+  const { width, height } = props;
   return (
     <svg
-      width={props.width}
-      height={props.height}
+      width={width}
+      height={height}
       viewBox="0 0 439 103"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

@@ -1,9 +1,22 @@
 import React from "react";
-
+import "./style.css";
 const Input = (props) => {
-  const { type, name, id, placeholder, value, onChange, className } = props;
+  const {
+    type,
+    name,
+    id,
+    placeholder,
+    value,
+    onChange,
+    className,
+    error,
+  } = props;
+  const { children, htmlFor } = props;
   return (
     <>
+      <label htmlFor={htmlFor} classNameLabel={className}>
+        {children}
+      </label>
       <input
         type={type}
         name={name}
@@ -13,6 +26,7 @@ const Input = (props) => {
         onChange={onChange}
         className={className}
       />
+      {error && <div className="error-msg">{error}</div>}
     </>
   );
 };

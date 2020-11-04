@@ -18,6 +18,7 @@
 }
 .back-text{
     margin-left: 12px;
+    cursor: pointer;
 }
 .text-form{
     margin-left: 13em;

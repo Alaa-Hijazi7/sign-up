@@ -8,12 +8,18 @@ import Register from "./Pages/Register/Register";
 function App() {
   return (
     <>
-      {/* <Route> */}
       <div className="App">
-        {/* <Login /> */}
-        <Register></Register>
+        <Router>
+          <Switch>
+            <Route path="/" exact>
+              <Login />
+            </Route>
+            <Route path="/Register" exact>
+              <Register />
+            </Route>
+          </Switch>
+        </Router>
       </div>
-      {/* </Route> */}
     </>
   );
 }

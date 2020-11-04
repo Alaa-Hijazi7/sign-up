@@ -1,6 +1,7 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 
-const BackBtn = () => {
+const BackBtn = (props) => {
   return (
     <div className="back-home">
       <svg
@@ -15,9 +16,12 @@ const BackBtn = () => {
           fill="#8692A6"
         />
       </svg>
-      <div className="back-text">Back</div>
+
+      <div className="back-text" onClick={() => props.history.goBack()}>
+        Back
+      </div>
     </div>
   );
 };
 
-export default BackBtn;
+export default withRouter(BackBtn);

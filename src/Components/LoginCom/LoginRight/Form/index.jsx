@@ -2,6 +2,7 @@ import React from "react";
 import Button from "../../../../Components/Btns";
 import Input from "../../../../Components/Input/Input";
 import Label from "../../../../Components/Input/Label";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Eye from "../../../../asset/img/eye.svg";
 
 import "./style.css";
@@ -40,10 +41,10 @@ class LoginForm extends React.Component {
     return (
       <>
         <form className="login-form" onSubmit={this.submit}>
-          <Label htmlFor="email" className="login-label">
-            Email
-          </Label>
           <Input
+            children="Email"
+            htmlFor="email"
+            classNameLabel="login-label"
             className="login-input1"
             type="email"
             id="email"
@@ -53,10 +54,11 @@ class LoginForm extends React.Component {
             onChange={this.handleChange}
           />
           <div className="password-div">
-            <Label htmlFor="password" className="login-label">
-              Password
-            </Label>
             <Input
+              children="Password"
+              classNameLabel="login-label"
+              className="login-input1"
+              htmlFor="password"
               type={showPassword ? "text" : "password"}
               id="password"
               name="password"
@@ -73,7 +75,6 @@ class LoginForm extends React.Component {
           </div>
           <div className="remember-me">
             <Input
-              put
               type="checkbox"
               id="checkbox"
               name="RememberMe"
@@ -87,9 +88,9 @@ class LoginForm extends React.Component {
           <Button className="login-Btn">Login</Button>
           <p className="account-go-register">
             Don't have account Create now{" "}
-            <a href="/Register" className="go-register">
+            <Link to="/Register" className="go-register">
               Click here
-            </a>
+            </Link>
           </p>
         </form>
       </>

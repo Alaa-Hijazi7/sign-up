@@ -1,15 +1,24 @@
 import React from "react";
+import axios from "axios";
 
+import Input from "../../../Input/Input";
 import Register from "./ConfirmBtns/Register/Register";
 import "./style.css";
+import singUpSchema from "./val";
+import { Redirect } from "react-router-dom";
 
 const initialState = {
   email: "",
   password: "",
-  passwordErrorMsg: "",
-  re_password: "",
-  re_passwordErrorMsg: "",
+  rePassword: "",
   isChecked: false,
+  errors: {
+    email: "",
+    password: "",
+    rePassword: "",
+    isChecked: "",
+  },
+  error: "",
 };
 
 class Form extends React.Component {
@@ -19,67 +28,145 @@ class Form extends React.Component {
     const { value, name, type, checked } = e.target;
     let _value = value;
     _value = type === "checkbox" ? checked : value;
-    this.setState({ [name]: _value });
+    this.setState({ [name]: _value }, () => {
+      const { email, password, rePassword, isChecked } = this.state;
+
+      singUpSchema(name)
+        .validate(
+          { email, password, rePassword, isChecked },
+          { abortEarly: false }
+        )
+        .then(() => {
+          this.setState((prevState) => {
+            const { errors } = prevState;
+            console.log(name);
+            return {
+              errors: { ...errors, [name]: "" },
+            };
+          });
+        })
+        .catch((err) => {
+          this.setState((prevState) => {
+            const errors = {};
+            err.inner.forEach(({ message, params }) => {
+              errors[params.path] = message;
+            });
+
+            return { errors: { ...prevState.errors, [name]: errors[name] } };
+          });
+        });
+    });
+  };
+
+  validateForm = (data) => {
+    singUpSchema()
+      .validate(data, { abortEarly: false })
+      .then(() => {
+        console.log("Register successfully");
+      })
+      .catch((err) => {
+        const errors = {};
+        err.inner.forEach(({ message, params }) => {
+          errors[params.path] = message;
+        });
+        this.setState({ errors });
+      });
   };
 
   submit = (e) => {
-    e.preventDefault();
-    if (this.state.isChecked === true) {
-      alert(
-        `email : ${this.state.email} password: ${this.state.password} re_password: ${this.state.re_password}`
-      );
-      //clear
-      this.setState(initialState);
-    } else {
-      alert("You must agree terms & conditions");
+    e.preventDefault(); //no refresh
+
+    const { email, password, rePassword, isChecked, error } = this.state;
+    this.validateForm({ email, password, rePassword, isChecked });
+    if (!error) {
+      axios
+        .post("https://fake-api-ahmed.herokuapp.com/v1/auth/signup", {
+          email,
+          password,
+        })
+        .then((res) => {
+          alert("Register successfully");
+        })
+        .catch((err) => {
+          let error = err.response.data.error;
+          if (error.includes("duplicate")) {
+            error = "Try another email !";
+          }
+          this.setState({ error });
+        });
     }
   };
 
   render() {
-    const { email, password, re_password, isChecked } = this.state;
+    const {
+      email,
+      password,
+      rePassword,
+      isChecked,
+      errors,
+      error,
+    } = this.state;
     return (
       <>
         <div className="all-form">
           <form className="form" onSubmit={this.submit}>
-            <label htmlFor="email">Email address*</label>
-            <input
-              type="email"
+            <Input
+              children="email*"
+              classNameLabel="login-label"
+              htmlFor="email"
+              type="text"
               id="email"
               name="email"
               placeholder="Enter email address"
               value={email}
               onChange={this.handleChange}
+              error={errors.email}
+              className={`register-input ${errors.email && "error"}`}
             />
-            <label htmlFor="password">Create password*</label>
-            <input
+            <Input
+              children="password*"
+              classNameLabel="login-label"
+              htmlFor="password"
               name="password"
               type="password"
               id="password"
               placeholder="Password"
               value={password}
               onChange={this.handleChange}
+              error={errors.password}
+              className={`register-input ${errors.password && "error"}`}
             />
-
-            <label htmlFor="re-password">Repeat password*</label>
-            <input
-              name="re_password"
+            <Input
+              children="Repeat password*"
+              classNameLabel="login-label"
+              htmlFor="rePassword"
+              name="rePassword"
               type="password"
               id="re-password"
               placeholder="Repeat password"
-              value={re_password}
+              value={rePassword}
               onChange={this.handleChange}
+              error={errors.rePassword}
+              className={`register-input ${errors.rePassword && "error"}`}
             />
             <div className="cb1">
-              <input
+              <Input
                 type="checkbox"
                 id="checkbox"
-                name="isChecked"
                 className="agree-checkbox"
+                name="isChecked"
                 checked={isChecked}
                 onChange={this.handleChange}
+                error={errors.isChecked}
               />
-              <label htmlFor="checkbox">I agree to terms & conditions</label>
+              <label
+                htmlFor="checkbox"
+                className={errors.isChecked && "error-checkbox"}
+              >
+                I agree to terms & conditions
+              </label>
             </div>
+            {error && <span style={{ color: "red" }}>{error}</span>}
             <Register
               type="submit"
               name="submit"

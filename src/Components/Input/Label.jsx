@@ -1,9 +1,10 @@
 import React from "react";
 
 const Label = (props) => {
+  const { children, className, htmlFor } = props;
   return (
-    <label htmlFor={props.htmlFor} className={props.className}>
-      {props.children}
+    <label htmlFor={htmlFor} className={className}>
+      {children}
     </label>
   );
 };
