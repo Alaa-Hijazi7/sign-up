@@ -1,20 +1,20 @@
 import * as yup from "yup";
 
-const signupSchema = (fieldName) => {
+const signUpSchema = (fieldName) => {
   if (fieldName) {
     const validationObj = {
-      email: yup.string().email("lkajshdflkj"),
-      password: yup.string().min(8, "min char is 8").matches().max(20),
+      email: yup.string().email(),
+      password: yup.string().min(8, "min char is 8").max(20),
       rePassword: yup
         .string()
-        .oneOf([yup.ref("password"), null], "Passwords must match"),
+        .oneOf([yup.ref("password")], "Passwords must match"),
       isChecked: yup.boolean().typeError("You must agree").oneOf([true]),
     };
 
     const errMsgs = {
       email: "Enter e-mail 😡",
       password: "Where is your password ? 🙄",
-      rePassword: "test",
+      rePassword: "Hello ??",
     };
 
     validationObj[fieldName] = validationObj[fieldName].required(
@@ -35,13 +35,9 @@ const signupSchema = (fieldName) => {
         .string()
         .oneOf([yup.ref("password"), null], "Passwords must match")
         .required("Did you really forget me ??? 😥"),
-      isChecked: yup
-        .boolean()
-        .typeError("You must agree")
-        .oneOf([true], " ")
-        .required(),
+      isChecked: yup.boolean().typeError("You must agree").oneOf([true]),
     });
   }
 };
 
-export default signupSchema;
+export default signUpSchema;

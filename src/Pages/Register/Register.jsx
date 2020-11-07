@@ -2,13 +2,16 @@ import LeftSide from "../../Components/RegisterCom/LeftSide";
 import RightSide from "../../Components/RegisterCom/RightSide";
 import React from "react";
 
-const Register = () => {
+function Register(props) {
+  const { handleClick } = props;
   return (
     <>
-      <LeftSide />
-      <RightSide />
+      <div className="login-App">
+        <LeftSide />
+        <RightSide handleClick={handleClick} />
+      </div>
     </>
   );
-};
+}
 
 export default Register;

@@ -5,7 +5,7 @@ import Input from "../../../Input/Input";
 import Register from "./ConfirmBtns/Register/Register";
 import "./style.css";
 import singUpSchema from "./val";
-import { Redirect } from "react-router-dom";
+import { Redirect, withRouter } from "react-router-dom";
 
 const initialState = {
   email: "",
@@ -16,7 +16,6 @@ const initialState = {
     email: "",
     password: "",
     rePassword: "",
-    isChecked: "",
   },
   error: "",
 };
@@ -39,7 +38,6 @@ class Form extends React.Component {
         .then(() => {
           this.setState((prevState) => {
             const { errors } = prevState;
-            console.log(name);
             return {
               errors: { ...errors, [name]: "" },
             };
@@ -51,7 +49,6 @@ class Form extends React.Component {
             err.inner.forEach(({ message, params }) => {
               errors[params.path] = message;
             });
-
             return { errors: { ...prevState.errors, [name]: errors[name] } };
           });
         });
@@ -85,7 +82,7 @@ class Form extends React.Component {
           password,
         })
         .then((res) => {
-          alert("Register successfully");
+          this.props.history.push("/login");
         })
         .catch((err) => {
           let error = err.response.data.error;
@@ -157,7 +154,6 @@ class Form extends React.Component {
                 name="isChecked"
                 checked={isChecked}
                 onChange={this.handleChange}
-                error={errors.isChecked}
               />
               <label
                 htmlFor="checkbox"
@@ -172,7 +168,6 @@ class Form extends React.Component {
               name="submit"
               id="submit"
               className="submit"
-              Button
             />
           </form>
         </div>
@@ -180,4 +175,4 @@ class Form extends React.Component {
     );
   }
 }
-export default Form;
+export default withRouter(Form);

@@ -11,7 +11,8 @@ import LoginForm from "./Form";
 import "./style.css";
 import "./../../RegisterCom/RightSide/form/ConfirmBtns/Register/style.css";
 
-const LoginRight = () => {
+const LoginRight = (props) => {
+  const { handleLogin, handleClick } = props;
   return (
     <>
       <div className="login-right">
@@ -40,7 +41,7 @@ const LoginRight = () => {
             <Line id="line1" />
           </div>
         </div>
-        <LoginForm />
+        <LoginForm handleLogin={handleLogin} handleClick={handleClick} />
       </div>
     </>
   );

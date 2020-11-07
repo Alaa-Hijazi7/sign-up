@@ -1,14 +1,10 @@
 import React from "react";
 
 function Button(props) {
+  const { className, name, type, id, children } = props;
   return (
-    <button
-      className={props.className}
-      name={props.name}
-      type={props.type}
-      id={props.id}
-    >
-      {props.children}
+    <button className={className} name={name} type={type} id={id}>
+      {children}
     </button>
   );
 }
